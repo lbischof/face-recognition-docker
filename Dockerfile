@@ -30,4 +30,5 @@ RUN cd ~ && \
     cd  dlib/ && \
     python3 setup.py install --yes USE_AVX_INSTRUCTIONS
 
-RUN pip3 install face_recognition scikit-learn
+RUN pip3 install --upgrade pip && \
+    pip3 --default-timeout=100 install face_recognition scikit-learn
