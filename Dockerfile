@@ -30,5 +30,7 @@ RUN cd ~ && \
     cd  dlib/ && \
     python3 setup.py install --yes USE_AVX_INSTRUCTIONS
 
+RUN apt-get install -y python3-sklearn python3-sklearn-lib
+
 RUN pip3 install --upgrade pip && \
-    pip3 install face_recognition scikit-learn
+    pip3 install face_recognition
