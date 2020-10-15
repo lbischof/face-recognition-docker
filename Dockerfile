@@ -22,8 +22,6 @@ RUN apt-get -y update && \
     python3-numpy \
     software-properties-common \
     zip \
-    python3-sklearn \
-    python3-sklearn-lib \
     python3-pil \
     && apt-get clean && rm -rf /tmp/* /var/tmp/*
 
