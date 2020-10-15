@@ -1,4 +1,4 @@
-FROM python:3.6-slim-stretch
+FROM python:slim
 
 RUN apt-get -y update && \
     apt-get install -y --fix-missing \
@@ -22,15 +22,16 @@ RUN apt-get -y update && \
     python3-numpy \
     software-properties-common \
     zip \
+    python3-sklearn \
+    python3-sklearn-lib \
+    python3-pil \
     && apt-get clean && rm -rf /tmp/* /var/tmp/*
 
 RUN cd ~ && \
     mkdir -p dlib && \
-    git clone -b 'v19.9' --single-branch https://github.com/davisking/dlib.git dlib/ && \
+    git clone -b 'v19.21' --single-branch https://github.com/davisking/dlib.git dlib/ && \
     cd  dlib/ && \
     python3 setup.py install --yes USE_AVX_INSTRUCTIONS
-
-RUN apt-get install -y python3-sklearn python3-sklearn-lib python3-pil
 
 ENV PYTHONPATH=/usr/lib/python3/dist-packages
 
