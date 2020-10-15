@@ -2,7 +2,7 @@ name: Docker builds
 
 on:
   push:
-    branches: master
+    branches: dev
 
 jobs:
   build:
