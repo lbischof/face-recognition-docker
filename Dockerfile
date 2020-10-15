@@ -32,5 +32,7 @@ RUN cd ~ && \
 
 RUN apt-get install -y python3-sklearn python3-sklearn-lib python3-pil
 
+ENV PYTHONPATH=/usr/lib/python3/dist-packages
+
 RUN pip3 install --upgrade pip && \
     pip3 install face_recognition
