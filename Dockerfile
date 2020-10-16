@@ -17,7 +17,6 @@ RUN apt-get update -y && \
 #-    libavcodec-dev \
 #-    libavformat-dev \
 #-    libgtk2.0-dev \
-#-    libjpeg-dev \
 #-    liblapack-dev \
 #-    libswscale-dev \
 #-    pkg-config \
@@ -29,6 +28,10 @@ RUN apt-get update -y && \
 
 RUN pip install dlib-binary
 
+RUN apt-get update -y && \
+    apt-get install -y \
+        libjpeg-dev \
+        zlib1g-dev
 RUN pip install face_recognition
 
 #RUN cd ~ && \
