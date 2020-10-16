@@ -33,6 +33,7 @@ RUN apt-get update -y && \
         libjpeg-dev \
         zlib1g-dev
 RUN pip install face_recognition
+RUN pip install scikit-learn
 
 #RUN cd ~ && \
 #    git clone -b 'v19.19' --single-branch https://github.com/davisking/dlib.git && \
